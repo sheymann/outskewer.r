@@ -20,10 +20,14 @@ results.df <- SetFinalOutlierStatus(tmp$df)
 
 ```R
 # Load data, give proper names to the data frame columns.
-data.df <- read.table('data/nodes.dat')
+# File structure: timestamp, value
+# 1 10807
+# 2 10873
+# 3 10902
+data.df <- read.table('ts.dat')
 colnames(data.df) <- c("t","x")
 
-# Run outskewer with a time window of size 100 values.
+# Run outskewer with a time window with size of w values.
 results.df <- DetectOutliersDynamically(data.df, w=100)
 results.df <- SetFinalOutlierStatus(results.df)
 ```
