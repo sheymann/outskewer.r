@@ -61,6 +61,7 @@ g
 ####Results
 
 ```R
+# Save in a tabular format
 ExportData(data=results.df, filename='my_results')
 ```
 
@@ -68,5 +69,6 @@ ExportData(data=results.df, filename='my_results')
 ####Plot
 
 ```R
+# Save in PDF, EPS and PNG 
 ExportPlot(gplot=g, filename='my_results', width=10, height=5)
 ```
