@@ -56,11 +56,15 @@ results.df <span class="o">&lt;-</span> SetFinalOutlierStatus<span class="p">(</
 <h4>Execute on a time series</h4>
 
 <div class="highlight">
-<pre><span class="c1"># Load data, give proper names to the data frame columns.</span>
-data.df <span class="o">&lt;-</span> read.table<span class="p">(</span><span class="s">'data/nodes.dat'</span><span class="p">)</span>
+<pre><span class="c1"># Load data, give proper names to the data frame columns.
+# File structure: timestamp, value
+# 1 10807
+# 2 10873
+# 3 10902</span>
+data.df <span class="o">&lt;-</span> read.table<span class="p">(</span><span class="s">'ts.dat'</span><span class="p">)</span>
 colnames<span class="p">(</span>data.df<span class="p">)</span> <span class="o">&lt;-</span> c<span class="p">(</span><span class="s">"t"</span><span class="p">,</span><span class="s">"x"</span><span class="p">)</span>
 
-<span class="c1"># Run outskewer with a time window of size 100 values.</span>
+<span class="c1"># Run outskewer with a time window with size of w values.</span>
 results.df <span class="o">&lt;-</span> DetectOutliersDynamically<span class="p">(</span>data.df<span class="p">,</span> w<span class="o">=</span><span class="m">100</span><span class="p">)</span>
 results.df <span class="o">&lt;-</span> SetFinalOutlierStatus<span class="p">(</span>results.df<span class="p">)</span>
 </pre>
