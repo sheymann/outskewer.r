@@ -27,6 +27,11 @@
       <section>
         <p>Free and open-source implementation in <strong>R</strong> of <a href="http://sheymann.github.com/outskewer/"><em>Outskewer</em></a>, a method to detect outliers in data sets of numbers and in time series. It is distributed under the <a href="https://github.com/sheymann/outskewer.r/blob/master/LICENSE.txt">MIT License</a>.</p>
 
+
+<h3>Requirements</h3>
+
+This code was tested using <a href="http://www.r-project.org/">R 2.14.1</a>, and plots generated using the package <a href="http://had.co.nz/ggplot2/">ggplot2</a> v0.9.0.
+
 <h3>Usage</h3>
 
 <h4>Load functions</h4>
@@ -106,7 +111,7 @@ g
 
 <div class="highlight">
 <pre><span class="c1"># Save in a tabular format.</span>
-<pre>ExportData<span class="p">(</span>data<span class="o">=</span>results.df<span class="p">,</span> filename<span class="o">=</span><span class="s">'my_results'</span><span class="p">)</span>
+ExportData<span class="p">(</span>data<span class="o">=</span>results.df<span class="p">,</span> filename<span class="o">=</span><span class="s">'my_results'</span><span class="p">)</span>
 </pre>
 </div>
 
@@ -115,7 +120,7 @@ g
 
 <div class="highlight">
 <pre><span class="c1"># Save in PDF, EPS and PNG.</span>
-<pre>ExportPlot<span class="p">(</span>gplot<span class="o">=</span>g<span class="p">,</span> filename<span class="o">=</span><span class="s">'my_results'</span><span class="p">,</span> width<span class="o">=</span><span class="m">10</span><span class="p">,</span> height<span class="o">=</span><span class="m">5</span><span class="p">)</span>
+ExportPlot<span class="p">(</span>gplot<span class="o">=</span>g<span class="p">,</span> filename<span class="o">=</span><span class="s">'my_results'</span><span class="p">,</span> width<span class="o">=</span><span class="m">10</span><span class="p">,</span> height<span class="o">=</span><span class="m">5</span><span class="p">)</span>
 </pre>
 </div>
 
