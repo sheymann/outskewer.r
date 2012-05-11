@@ -192,17 +192,26 @@ PlotGraphic  <- function(df_) {
                 no      = 1, 
                 unknown = 5)
     
-    breaks_ <- c(unique(df_$status))
+    breaks_tmp <- c(unique(df_$status))
     labels_ <- c()
-    if( "no" %in% breaks_)
-        labels_ <- c(labels_, "not outlier")
-    if( "maybe" %in% breaks_)
-        labels_ <- c(labels_, "potential outlier")
-    if( "yes" %in% breaks_)
-        labels_ <- c(labels_, "outlier")
-    if( "unknown" %in% breaks_)
-        labels_ <- c(labels_, "unknown")
-
+    breaks_ <- c()
+    if( "no" %in% breaks_tmp) {
+        labels_  <- c(labels_, "not outlier")
+        breaks_ <- c(breaks_, "no")
+    }
+    if( "maybe" %in% breaks_tmp) {
+        labels_  <- c(labels_, "potential outlier")
+        breaks_ <- c(breaks_, "maybe")
+    }
+    if( "yes" %in% breaks_tmp) {
+        labels_  <- c(labels_, "outlier")
+        breaks_ <- c(breaks_, "yes")
+    }
+    if( "unknown" %in% breaks_tmp) {
+        labels_  <- c(labels_, "unknown")
+        breaks_ <- c(breaks_, "unknown")
+    }
+    
     g <- qplot(data = df_, x = t, y = x, colour = status, shape = status)
     g <- g + scale_colour_manual(values=colour, breaks=breaks_, labels=labels_)
     g <- g + scale_shape_manual(values=shape, breaks=breaks_, labels=labels_)

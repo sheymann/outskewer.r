@@ -511,7 +511,7 @@ RunStaticExample <- function() {
     tmp <- DetectOutliers(x)
     results.df <- SetFinalOutlierStatus(tmp$df)
     
-    # Display the number of outliers.
+    # Display the number of outliers detected.
     summary(factor(results.df$status))
     
     # Plot the cumulative frequency with points colored by outlier status,
@@ -526,10 +526,10 @@ RunStaticExample <- function() {
     s.g
     
     # Save results in a file.
-#   ExportData(results.df, 'my_results')
+#   ExportData(results.df, filename='my_results')
     
     # Save the plot in a file.
-#   ExportPlot(g, 'my_results', width=2.5, height=2)
+#   ExportPlot(g, filename='my_results', width=2.5, height=2)
 }
 
 RunDynamicExample <- function() {
@@ -543,11 +543,11 @@ RunDynamicExample <- function() {
     data.df <- read.table('data/nodes.dat')
     colnames(data.df) <- c("t","x")
     
-    # Run outskewer.
+    # Run outskewer with a time window of size 100 values.
     results.df <- DetectOutliersDynamically(data.df, w=100)
     results.df <- SetFinalOutlierStatus(results.df)
     
-    # Display the number of outliers.
+    # Display the number of outliers detected.
     summary(factor(results.df$status))
     
     # Plot results with points colored by outlier status.
@@ -563,8 +563,8 @@ RunDynamicExample <- function() {
     g2
     
     # Save results in a file.
-#   ExportData(results.df, 'my_dynamic_results')
+#   ExportData(results.df, filename='my_dynamic_results')
     
     # Save the plot in a file.
-#   ExportPlot(g, 'my_dynamic_results', width=10, height=5)
+#   ExportPlot(g, filename='my_dynamic_results', width=10, height=5)
 }
